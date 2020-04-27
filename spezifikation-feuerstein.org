@@ -1,0 +1,239 @@
+
+File:     spezifikation-feuerstein.org
+Author:   wost@ewost.de
+
+Log: 2020-01-23 Datei erzeugt
+     2020-03-26 aktualisiert
+     2020-04-03 aktualisiert
+     2020-04-16 aktualisiert
+
+
+* Abstrakt
+Text1:
+Unsere lokale Forthgruppe Ruhrgebiet hat ein Projekt in Angriff
+genommen, welches hohe Ziele hat. Es soll die Referenz des Forth e.V.
+werden, wenn es darum geht, Forth-Interessierten ein komplettes System
+an die Hand zu geben, um damit in die Programmierung von MCUs mit Forth
+einzusteigen.
+
+Text2:
+Das Projekt mit dem Arbeitsnamen "Feuerstein" soll es Forth-Einsteigern leicht
+machen, mit der neuen Materie vertraut zu werden. Typische Hindernisse und Fallstricke
+werden vermieden. Die Benutzererfahrung steht ganz oben auf der Liste.
+Das gelieferte Paket hat den Anspruch, komplett zu sein.
+In einer Schachtel befinden sich die teilbestückte Hauptplatine, Bauteile zum
+Komplettieren der Schaltung, USB-Seriell-Wandler, USB-Kabel sowie Dokumentation
+in Papier- und elekronischer Form. Zur Inbetriebnahme des Systems ist ein PC mit
+Linux, MacOS oder Windows erforderlich. Eventuell wird auch Android unterstützt.
+Ein Internetzugang wird für den Start nicht benötigt, ist aber später für die
+Aktualisierung des Systems zu empfehlen.
+
+
+* Sonstiges
+** Open Source Software
+   Alles als Quelltext verfügbar
+** Open Source Hardware
+   - PCB-Designfiles (Schematic, Board, Gerber) im Kicad-Format verfügbar
+   - Bill of Material incl. Einkaufsquellen verfügbar
+** Webseite
+   Projektwebseite, erzeugt durch Sphinx
+** Voller Support
+   - Ansprechpartner
+   - Ersatz defekter Hardware
+
+
+* Fragen
+  - Wer hilft?
+  - Wer testet, gibt Feedback?
+  - Wieviel darf ein Streuartikel in der Herstellung kosten?
+  - Wieviel kostet das Komplettset?
+  - Finanzierung durch Verein?
+
+
+* Aufgaben
+** Zielgruppe definieren
+   - Hardware-Kenntnis
+     + keinen Schimmer
+     + Grundkenntnis Elektronik
+     + Fundierte Kenntnis Elektronik
+     + Grundkenntnis Mikrocontroller / Digitaltechnik
+     + Fundierte Kenntnis Mikrocontroller / Digitaltechnik
+   - Programmier-Kenntnis
+     + keinen Schimmer
+     + erste Programmiersprache Forth
+     + mindestens eine Programmiersprache gelernt
+     + Programmierfreak, alle gängigen Programmiersprachen fließend
+   - Personengruppen
+     + Hardwarebastler auf der Suche nach einer geeigneten Programmiersprache
+     + Lehrer, Dozenten (Multiplikatoren)
+     + Schüler
+     + Studenten
+     + Hacker / Maker
+     + Forthkenner mit Spieltrieb
+     + Rentner
+
+** Sprache
+   - Quelltext-Kommentare: Englisch
+   - Hilfetexte: Englisch
+   - Dokumentation: erst Deutsch, dann Englisch (deepl.com)
+
+** Schreibstil Dokumentation festlegen
+   - Leseransprache: 
+       + Du hast dir bestimmt schon ...
+       + Wir kümmern uns heute um die SPI-Schnittstelle und ...
+       + Sie könnten die Daten auch über die ...
+   - Humor, ernst, wissenschaftlich, streng
+
+** Codestil festlegen
+   Ist es sinnvoll, einen einheitlichen Codestil festzulegen oder ist das im
+   Umfeld von Forth nicht praktikabel?
+   Wenn ein einheitlicher Stil, wie sieht der aus?
+     - Einrückung
+     - Namen
+     - Dateiendungen .fs
+     - max. Zeilenlänge 80?
+
+** Einarbeiten in Werkzeuge
+*** Python
+    - Pyserial
+    - serielles Terminal
+    - Flasher
+*** Emacs
+    - Org-Mode
+    - Diff-Tool emerge, smerge-mode, ediff 
+*** Sphinx
+    - Read The Docs
+*** Git
+*** Github
+*** serielle Terminals
+    - Picocom
+    - e4thcom
+*** KiCAD
+*** Mecrisp Quintus
+*** Forth-Cloud (NextCloud)
+*** Kommunikation
+    - Zoom
+    - Jitsi
+*** EtherPad
+
+** Zusammenarbeit mit HCC!Forth (Willem, Albert)
+   - Funktionsweise GD32VF103
+
+** andere Projekte anschauen
+*** Egel-Project
+    - erste Version mit 8051-MCU
+    - aktuelle Version mit MSP430
+*** JeeLabs
+    - Forth-Artikel
+    - Code
+*** FlashForth
+    - Dokumentation Bergbau-Uni Australien
+*** Buch "Die Programmiersprache Forth" (Albert Nijhof)
+*** Gforth
+    - Tutorial
+    - Dokumentation
+
+** Chip GD32VF103
+*** Interrupts
+*** Events
+*** Sleep Modes
+*** SPI
+*** I2C
+
+
+* Hardware
+** Hauptplatine, teilbestückt
+   - PCB
+   - RISC-V GD32VF103
+   - Spannungsregler
+   - Quarze 8 MHz und 32,768 kHz
+   - 8 MB SPI-Flash
+   - USB-Buchse
+** lose Teile zum Selbsteinlöten
+   - Taster
+   - LEDs
+   - Pufferzelle für Echtzeituhr (Batterie oder Supercap)
+   - Pmod Steckerleisten
+   - Schaltkreis zum Vermessen von Bauteilen wie Transistor,
+     Diode, Widerstand, Kondensator, Spule
+** USB-Seriell-Wandler
+   - galvanische Trennung
+   - Chip CP2102N
+   - Hardware-Handshake
+   - Pmod, lose
+   - USB-Kabel (Mikro-USB oder USB-C)
+** weitere Teile im Paket
+   - Fototransistor
+   - Potentiometer
+   - Pmod-Kabel
+   - lose Kabel Buchse/Buchse, verschiedene Längen
+
+
+* Software
+** auf dem Chip/Board
+*** Mecrisp Quintus
+    - Assembler
+    - Disassembler
+    - Fixkomma-Routinen
+    - Bedingte Compilierung
+*** Forth-Bibliothek
+    - USB, USB-OTG
+    - SPI, I2C, UART, FIFO
+    - CAN
+    - Interrupt
+    - Timer
+    - SD-Karte, SPI-Flash
+    - ADC, DAC
+    - RTC
+*** Interaktives "Schweizer Taschenmesser"
+    - Messfunktionen
+    - Signalgenerator
+    - Protokollanalysator für UART, SPI, I2C, CAN    
+*** VIS-System
+    Vocs, Items, Sticky words von Manfred
+*** History-Buffer
+    Speichert die letzten 20 Eingaben. Quintus hat TIB von max. 200 Zeichen.
+    Tricky: Quelltextdownload soll nicht im History-Buffer landen.
+*** Auto-Vervollständigung
+    - Dictionary-Einträge
+    - selbst definierte Floskeln
+*** Eingebautes Hilfesystem im SPI-Flash
+    - Sprache: Englisch, eventuell später auch eine Version Deutsch
+    - Worte und ihre Funktion / Bedeutung (mit Beispiel-Quelltext zum Ausprobieren)
+    - Registerbeschreibung und momentane Werte anzeigen / setzen
+    - Verbose-Flag zur Umschaltung der Detailierung der Ausgabe
+*** Forth-Beispieldateien
+    - Blinkprogramm
+    - Spiele
+*** Interaktives Tutorial (macht Carsten)
+    - User kann auf dem Chip Forth lernen
+** auf dem PC
+  - Entwicklungssystem
+    + Program zum Flashen von Quintus (Python)
+    + Selbstgeschriebene IDE (Python) nach Vorbild "5th"
+    + Emacs incl. Syntax-Highlighting und Terminal
+    + e4thcom (Manfreds Terminal)
+    + picocom (Linux)
+    + minicom (Linux)
+    + Teraterm (Windows)
+    + Mac ???
+
+
+* Dokumentation
+** Schnelleinstieg (erste Schritte) für den Ungeduldigen
+   - Platine zusammenbauen
+   - Einrichten einer Entwicklungsumgebung
+   - Blinkprogramm starten und verändern
+** Mecrisp Quintus
+   - Tutorial
+   - Benutzerhandbuch
+   - Referenzhandbuch
+** Hardware Benutzerhandbuch
+   - Liste der Anschlüsse mit Beschreibung 
+   - Schaltplan
+   - Funktionsweise der Schaltung
+   - Kurzbeschreibung Bausteine
+** Datenblätter und Benutzerhandbücher verwendeter Bausteine
+   - GD32VF103
+   - SPI-Flash
+   - CP2102N
