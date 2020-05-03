@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<title>spezifikation-feuerstein</title>
+<!-- 2020-05-03 So 22:27 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Wolfgang" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">spezifikation-feuerstein</h1>
+<div id="table-of-contents">
+<h2>Inhaltsverzeichnis</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Worum geht es?</a></li>
+<li><a href="#sec-2">2. Eigenschaften</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Open Source Software</a></li>
+<li><a href="#sec-2-2">2.2. Open Source Hardware</a></li>
+<li><a href="#sec-2-3">2.3. Webseite</a></li>
+<li><a href="#sec-2-4">2.4. Voller Support</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Fragen</a></li>
+<li><a href="#sec-4">4. Aufgaben <code>[1/8]</code></a>
+<ul>
+<li><a href="#sec-4-1">4.1. <span class="todo TODO">TODO</span> Zielgruppe definieren</a></li>
+<li><a href="#sec-4-2">4.2. <span class="done DONE">DONE</span> Sprache</a></li>
+<li><a href="#sec-4-3">4.3. <span class="todo TODO">TODO</span> Schreibstil Dokumentation festlegen</a></li>
+<li><a href="#sec-4-4">4.4. <span class="todo TODO">TODO</span> Codestil festlegen</a></li>
+<li><a href="#sec-4-5">4.5. <span class="todo TODO">TODO</span> Einarbeiten in Werkzeuge <code>[0/11]</code></a>
+<ul>
+<li><a href="#sec-4-5-1">4.5.1. <span class="todo TODO">TODO</span> Python</a></li>
+<li><a href="#sec-4-5-2">4.5.2. <span class="todo TODO">TODO</span> Emacs</a></li>
+<li><a href="#sec-4-5-3">4.5.3. <span class="todo TODO">TODO</span> Sphinx</a></li>
+<li><a href="#sec-4-5-4">4.5.4. <span class="todo TODO">TODO</span> Git</a></li>
+<li><a href="#sec-4-5-5">4.5.5. <span class="todo TODO">TODO</span> Github</a></li>
+<li><a href="#sec-4-5-6">4.5.6. <span class="todo TODO">TODO</span> serielle Terminals</a></li>
+<li><a href="#sec-4-5-7">4.5.7. <span class="todo TODO">TODO</span> KiCAD</a></li>
+<li><a href="#sec-4-5-8">4.5.8. <span class="todo TODO">TODO</span> Mecrisp Quintus</a></li>
+<li><a href="#sec-4-5-9">4.5.9. <span class="todo TODO">TODO</span> VIS</a></li>
+<li><a href="#sec-4-5-10">4.5.10. <span class="todo TODO">TODO</span> Forth-Cloud (NextCloud)</a></li>
+<li><a href="#sec-4-5-11">4.5.11. <span class="todo TODO">TODO</span> Kommunikation</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-6">4.6. <span class="todo TODO">TODO</span> Zusammenarbeit mit HCC!Forth (Willem, Albert)</a></li>
+<li><a href="#sec-4-7">4.7. <span class="todo TODO">TODO</span> andere Projekte anschauen <code>[0/5]</code></a>
+<ul>
+<li><a href="#sec-4-7-1">4.7.1. <span class="todo TODO">TODO</span> Egel-Project</a></li>
+<li><a href="#sec-4-7-2">4.7.2. <span class="todo TODO">TODO</span> JeeLabs</a></li>
+<li><a href="#sec-4-7-3">4.7.3. <span class="todo TODO">TODO</span> FlashForth</a></li>
+<li><a href="#sec-4-7-4">4.7.4. <span class="todo TODO">TODO</span> Buch "Die Programmiersprache Forth" (Albert Nijhof)</a></li>
+<li><a href="#sec-4-7-5">4.7.5. <span class="todo TODO">TODO</span> Gforth</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-8">4.8. <span class="todo TODO">TODO</span> Chip GD32VF103 <code>[0/5]</code></a>
+<ul>
+<li><a href="#sec-4-8-1">4.8.1. <span class="todo TODO">TODO</span> Interrupts</a></li>
+<li><a href="#sec-4-8-2">4.8.2. <span class="todo TODO">TODO</span> Events</a></li>
+<li><a href="#sec-4-8-3">4.8.3. <span class="todo TODO">TODO</span> Sleep Modes</a></li>
+<li><a href="#sec-4-8-4">4.8.4. <span class="todo TODO">TODO</span> SPI</a></li>
+<li><a href="#sec-4-8-5">4.8.5. <span class="todo TODO">TODO</span> I2C</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Hardware</a>
+<ul>
+<li><a href="#sec-5-1">5.1. Board Longan Nano</a></li>
+<li><a href="#sec-5-2">5.2. Board Seeed Studio RISC-V Dev. Board mit LCD 320x240</a></li>
+<li><a href="#sec-5-3">5.3. Board Polos GD32V Alef von Analoglamb</a></li>
+<li><a href="#sec-5-4">5.4. Board Eigenentwicklung</a>
+<ul>
+<li><a href="#sec-5-4-1">5.4.1. Hauptplatine, teilbestückt</a></li>
+<li><a href="#sec-5-4-2">5.4.2. lose Teile zum Selbsteinlöten</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-5">5.5. USB-Seriell-Wandler</a></li>
+<li><a href="#sec-5-6">5.6. weitere Teile im Paket</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Software</a>
+<ul>
+<li><a href="#sec-6-1">6.1. Firmware auf dem Chip/Board</a>
+<ul>
+<li><a href="#sec-6-1-1">6.1.1. Mecrisp Quintus</a></li>
+<li><a href="#sec-6-1-2">6.1.2. Forth-Bibliothek</a></li>
+<li><a href="#sec-6-1-3">6.1.3. Interaktives "Schweizer Taschenmesser"</a></li>
+<li><a href="#sec-6-1-4">6.1.4. VIS-System</a></li>
+<li><a href="#sec-6-1-5">6.1.5. History-Buffer</a></li>
+<li><a href="#sec-6-1-6">6.1.6. Auto-Vervollständigung</a></li>
+<li><a href="#sec-6-1-7">6.1.7. Eingebautes Hilfesystem im SPI-Flash</a></li>
+<li><a href="#sec-6-1-8">6.1.8. Forth-Beispieldateien</a></li>
+<li><a href="#sec-6-1-9">6.1.9. Interaktives Tutorial (macht Carsten)</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-2">6.2. auf dem PC</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Dokumentation</a>
+<ul>
+<li><a href="#sec-7-1">7.1. Heft: Schnelleinstieg (erste Schritte) für den Ungeduldigen</a></li>
+<li><a href="#sec-7-2">7.2. Buchreihe: Mecrisp Quintus</a>
+<ul>
+<li><a href="#sec-7-2-1">7.2.1. Buch1: Tutorial</a></li>
+<li><a href="#sec-7-2-2">7.2.2. Buch2: Benutzerhandbuch</a></li>
+<li><a href="#sec-7-2-3">7.2.3. Buch3: Referenzhandbuch</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-3">7.3. Buch: Der Mikrocontroller GD32VF103</a></li>
+<li><a href="#sec-7-4">7.4. Buch: Kochbuch / Rezepte</a></li>
+<li><a href="#sec-7-5">7.5. Hardware Benutzerhandbuch</a></li>
+<li><a href="#sec-7-6">7.6. Datenblätter / Benutzerhandbücher verwendeter Bausteine</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Worum geht es?</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Das Projekt mit dem Arbeitsnamen "Feuerstein" soll es Forth-Einsteigern leicht
+machen, mit der neuen Materie vertraut zu werden. Typische Hindernisse und
+Fallstricke werden vermieden. Die Benutzererfahrung steht ganz oben auf der Liste.
+Das gelieferte Paket hat den Anspruch, komplett zu sein.
+In einer Schachtel befinden sich die teilbestückte Hauptplatine, Bauteile zum
+Komplettieren der Schaltung, USB-Seriell-Wandler, USB-Kabel sowie Dokumentation
+in Papier- und elekronischer Form. Zur Inbetriebnahme des Systems ist ein PC mit
+Linux, MacOS oder Windows erforderlich. Eventuell wird auch Android unterstützt.
+Ein Internetzugang wird für den Start nicht benötigt, ist aber später für die
+Aktualisierung des Systems zu empfehlen.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Eigenschaften</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Open Source Software</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Alles als Quelltext verfügbar
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Open Source Hardware</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>PCB-Designfiles (Schematic, Board, Gerber) im Kicad-Format verfügbar
+</li>
+<li>Bill of Material incl. Einkaufsquellen verfügbar
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Webseite</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Projektwebseite, erzeugt durch Sphinx
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> Voller Support</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Ansprechpartner
+</li>
+<li>Ersatz defekter Hardware
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Fragen</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Wer hilft?
+</li>
+<li>Wer testet, gibt Feedback?
+</li>
+<li>Wieviel darf ein Streuartikel in der Herstellung kosten?
+</li>
+<li>Wieviel kostet das Komplettset?
+</li>
+<li>Finanzierung durch Verein?
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Aufgaben <code>[1/8]</code></h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> <span class="todo TODO">TODO</span> Zielgruppe definieren</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Hardware-Kenntnis
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> keinen Schimmer
+</li>
+<li><code>[&#xa0;]</code> Grundkenntnis Elektronik
+</li>
+<li><code>[&#xa0;]</code> Fundierte Kenntnis Elektronik
+</li>
+<li><code>[&#xa0;]</code> Grundkenntnis Mikrocontroller / Digitaltechnik
+</li>
+<li><code>[&#xa0;]</code> Fundierte Kenntnis Mikrocontroller / Digitaltechnik
+</li>
+</ul>
+</li>
+<li>Programmier-Kenntnis
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> keinen Schimmer
+</li>
+<li><code>[&#xa0;]</code> erste Programmiersprache Forth
+</li>
+<li><code>[&#xa0;]</code> mindestens eine Programmiersprache gelernt
+</li>
+<li><code>[&#xa0;]</code> Programmierfreak, alle gängigen Programmiersprachen fließend
+</li>
+</ul>
+</li>
+<li>Personengruppen
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Hardwarebastler auf der Suche nach einer geeigneten Programmiersprache
+</li>
+<li><code>[&#xa0;]</code> Lehrer, Dozenten (Multiplikatoren)
+</li>
+<li><code>[&#xa0;]</code> Schüler
+</li>
+<li><code>[&#xa0;]</code> Studenten
+</li>
+<li><code>[&#xa0;]</code> Hacker / Maker
+</li>
+<li><code>[&#xa0;]</code> Forthkenner mit Spieltrieb
+</li>
+<li><code>[&#xa0;]</code> Rentner
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> <span class="done DONE">DONE</span> Sprache</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Quelltext-Kommentare: Deutsch
+</li>
+<li><code>[X]</code> Quelltext-Kommentare: Englisch
+</li>
+<li><code>[&#xa0;]</code> Hilfetexte: Deutsch
+</li>
+<li><code>[X]</code> Hilfetexte: Englisch
+</li>
+<li><code>[X]</code> Dokumentation: erst Deutsch, dann Englisch (deepl.com)
+</li>
+<li><code>[&#xa0;]</code> Dokumentation: erst Englisch, dann Deutsch
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> <span class="todo TODO">TODO</span> Schreibstil Dokumentation festlegen</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Leseransprache: 
+<ul class="org-ul">
+<li>Du hast dir bestimmt schon &#x2026;
+</li>
+<li>Wir kümmern uns heute um die SPI-Schnittstelle und &#x2026;
+</li>
+<li>Sie könnten die Daten auch über die &#x2026;
+</li>
+</ul>
+</li>
+<li>Humor
+<ul class="org-ul">
+<li>ernst
+</li>
+<li>wissenschaftlich
+</li>
+<li>streng
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> Codestil festlegen</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+Ist es sinnvoll, einen einheitlichen Codestil festzulegen oder ist das im
+Umfeld von Forth nicht praktikabel?
+Wenn ein einheitlicher Stil, wie sieht der aus?
+</p>
+<ul class="org-ul">
+<li>Einrückung
+</li>
+<li>Namen
+</li>
+<li>Dateiendungen .fs
+</li>
+<li>max. Zeilenlänge 80?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> <span class="todo TODO">TODO</span> Einarbeiten in Werkzeuge <code>[0/11]</code></h3>
+<div class="outline-text-3" id="text-4-5">
+</div><div id="outline-container-sec-4-5-1" class="outline-4">
+<h4 id="sec-4-5-1"><span class="section-number-4">4.5.1</span> <span class="todo TODO">TODO</span> Python</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Pyserial
+</li>
+<li><code>[&#xa0;]</code> serielles Terminal
+</li>
+<li><code>[&#xa0;]</code> Flasher
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-2" class="outline-4">
+<h4 id="sec-4-5-2"><span class="section-number-4">4.5.2</span> <span class="todo TODO">TODO</span> Emacs</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Grundfunktionen
+</li>
+<li><code>[&#xa0;]</code> Org-Mode
+</li>
+<li><code>[&#xa0;]</code> Diff-Tool emerge, smerge-mode, ediff
+</li>
+<li><code>[&#xa0;]</code> Export HTML
+</li>
+<li><code>[&#xa0;]</code> Export PDF 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-3" class="outline-4">
+<h4 id="sec-4-5-3"><span class="section-number-4">4.5.3</span> <span class="todo TODO">TODO</span> Sphinx</h4>
+<div class="outline-text-4" id="text-4-5-3">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Doku lesen
+</li>
+<li><code>[&#xa0;]</code> Read The Docs
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-4" class="outline-4">
+<h4 id="sec-4-5-4"><span class="section-number-4">4.5.4</span> <span class="todo TODO">TODO</span> Git</h4>
+<div class="outline-text-4" id="text-4-5-4">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Grundlagen
+</li>
+<li><code>[&#xa0;]</code> Arbeit lokal
+</li>
+<li><code>[&#xa0;]</code> Synchronisation Server
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-5" class="outline-4">
+<h4 id="sec-4-5-5"><span class="section-number-4">4.5.5</span> <span class="todo TODO">TODO</span> Github</h4>
+<div class="outline-text-4" id="text-4-5-5">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Fork
+</li>
+<li><code>[&#xa0;]</code> Clone
+</li>
+<li><code>[&#xa0;]</code> Push
+</li>
+<li><code>[&#xa0;]</code> Pull
+</li>
+<li><code>[&#xa0;]</code> Pull Request
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-6" class="outline-4">
+<h4 id="sec-4-5-6"><span class="section-number-4">4.5.6</span> <span class="todo TODO">TODO</span> serielle Terminals</h4>
+<div class="outline-text-4" id="text-4-5-6">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> e4thcom  (Linux/Win10/Mac)
+</li>
+<li><code>[&#xa0;]</code> minicom  (Linux/Win10/Mac)
+</li>
+<li><code>[&#xa0;]</code> Picocom  (Linux/Win10/Mac)
+</li>
+<li><code>[&#xa0;]</code> TeraTerm (Win10 only)
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-7" class="outline-4">
+<h4 id="sec-4-5-7"><span class="section-number-4">4.5.7</span> <span class="todo TODO">TODO</span> KiCAD</h4>
+<div class="outline-text-4" id="text-4-5-7">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Schaltplan
+</li>
+<li><code>[&#xa0;]</code> PCB
+</li>
+<li><code>[&#xa0;]</code> Bibliotheken
+</li>
+<li><code>[&#xa0;]</code> Gerber
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-8" class="outline-4">
+<h4 id="sec-4-5-8"><span class="section-number-4">4.5.8</span> <span class="todo TODO">TODO</span> Mecrisp Quintus</h4>
+<div class="outline-text-4" id="text-4-5-8">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> unofficial Dokumentation Terry Porter
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-9" class="outline-4">
+<h4 id="sec-4-5-9"><span class="section-number-4">4.5.9</span> <span class="todo TODO">TODO</span> VIS</h4>
+<div class="outline-text-4" id="text-4-5-9">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Doku lesen
+</li>
+<li><code>[&#xa0;]</code> Tutorial durscharbeiten
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-10" class="outline-4">
+<h4 id="sec-4-5-10"><span class="section-number-4">4.5.10</span> <span class="todo TODO">TODO</span> Forth-Cloud (NextCloud)</h4>
+<div class="outline-text-4" id="text-4-5-10">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Bedienung
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5-11" class="outline-4">
+<h4 id="sec-4-5-11"><span class="section-number-4">4.5.11</span> <span class="todo TODO">TODO</span> Kommunikation</h4>
+<div class="outline-text-4" id="text-4-5-11">
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> Zoom
+</li>
+<li><code>[&#xa0;]</code> Jitsi
+</li>
+<li><code>[&#xa0;]</code> EtherPad
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-6" class="outline-3">
+<h3 id="sec-4-6"><span class="section-number-3">4.6</span> <span class="todo TODO">TODO</span> Zusammenarbeit mit HCC!Forth (Willem, Albert)</h3>
+<div class="outline-text-3" id="text-4-6">
+<ul class="org-ul">
+<li>Funktionsweise GD32VF103
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4-7" class="outline-3">
+<h3 id="sec-4-7"><span class="section-number-3">4.7</span> <span class="todo TODO">TODO</span> andere Projekte anschauen <code>[0/5]</code></h3>
+<div class="outline-text-3" id="text-4-7">
+</div><div id="outline-container-sec-4-7-1" class="outline-4">
+<h4 id="sec-4-7-1"><span class="section-number-4">4.7.1</span> <span class="todo TODO">TODO</span> Egel-Project</h4>
+<div class="outline-text-4" id="text-4-7-1">
+<ul class="org-ul">
+<li>erste Version mit 8051-MCU
+</li>
+<li>aktuelle Version mit MSP430
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-7-2" class="outline-4">
+<h4 id="sec-4-7-2"><span class="section-number-4">4.7.2</span> <span class="todo TODO">TODO</span> JeeLabs</h4>
+<div class="outline-text-4" id="text-4-7-2">
+<ul class="org-ul">
+<li>Forth-Artikel
+</li>
+<li>Code
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-7-3" class="outline-4">
+<h4 id="sec-4-7-3"><span class="section-number-4">4.7.3</span> <span class="todo TODO">TODO</span> FlashForth</h4>
+<div class="outline-text-4" id="text-4-7-3">
+<ul class="org-ul">
+<li>Dokumentation Bergbau-Uni Australien
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-7-4" class="outline-4">
+<h4 id="sec-4-7-4"><span class="section-number-4">4.7.4</span> <span class="todo TODO">TODO</span> Buch "Die Programmiersprache Forth" (Albert Nijhof)</h4>
+</div>
+<div id="outline-container-sec-4-7-5" class="outline-4">
+<h4 id="sec-4-7-5"><span class="section-number-4">4.7.5</span> <span class="todo TODO">TODO</span> Gforth</h4>
+<div class="outline-text-4" id="text-4-7-5">
+<ul class="org-ul">
+<li>Tutorial
+</li>
+<li>Dokumentation
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-8" class="outline-3">
+<h3 id="sec-4-8"><span class="section-number-3">4.8</span> <span class="todo TODO">TODO</span> Chip GD32VF103 <code>[0/5]</code></h3>
+<div class="outline-text-3" id="text-4-8">
+</div><div id="outline-container-sec-4-8-1" class="outline-4">
+<h4 id="sec-4-8-1"><span class="section-number-4">4.8.1</span> <span class="todo TODO">TODO</span> Interrupts</h4>
+</div>
+<div id="outline-container-sec-4-8-2" class="outline-4">
+<h4 id="sec-4-8-2"><span class="section-number-4">4.8.2</span> <span class="todo TODO">TODO</span> Events</h4>
+</div>
+<div id="outline-container-sec-4-8-3" class="outline-4">
+<h4 id="sec-4-8-3"><span class="section-number-4">4.8.3</span> <span class="todo TODO">TODO</span> Sleep Modes</h4>
+</div>
+<div id="outline-container-sec-4-8-4" class="outline-4">
+<h4 id="sec-4-8-4"><span class="section-number-4">4.8.4</span> <span class="todo TODO">TODO</span> SPI</h4>
+</div>
+<div id="outline-container-sec-4-8-5" class="outline-4">
+<h4 id="sec-4-8-5"><span class="section-number-4">4.8.5</span> <span class="todo TODO">TODO</span> I2C</h4>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Hardware</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Board Longan Nano</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Platine mit GD32VF103 (48 Pin), LCD 160x80
+</li>
+<li>Standard-Entwicklungsumgebung des Projektes
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Board Seeed Studio RISC-V Dev. Board mit LCD 320x240</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Platine mit GD32VF103VBT6 (100 Pin), 8 MB ser. Flash, 256 Bytes EEprom
+</li>
+<li>Option:  LCD 320x240 (Dadurch Standalone-Betrieb möglich)
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Board Polos GD32V Alef von Analoglamb</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Platine mit GD32VF103CBT6 (48 Pin)
+</li>
+<li>Keines Board mit dem Nötigsten (33mm x 33mm)
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Board Eigenentwicklung</h3>
+<div class="outline-text-3" id="text-5-4">
+</div><div id="outline-container-sec-5-4-1" class="outline-4">
+<h4 id="sec-5-4-1"><span class="section-number-4">5.4.1</span> Hauptplatine, teilbestückt</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<ul class="org-ul">
+<li>PCB
+</li>
+<li>RISC-V GD32VF103
+</li>
+<li>Spannungsregler
+</li>
+<li>Quarze 8 MHz und 32,768 kHz
+</li>
+<li>8 MB SPI-Flash
+</li>
+<li>USB-Buchse
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-4-2" class="outline-4">
+<h4 id="sec-5-4-2"><span class="section-number-4">5.4.2</span> lose Teile zum Selbsteinlöten</h4>
+<div class="outline-text-4" id="text-5-4-2">
+<ul class="org-ul">
+<li>Taster
+</li>
+<li>LEDs
+</li>
+<li>Pufferzelle für Echtzeituhr (Batterie oder Supercap)
+</li>
+<li>Pmod Steckerleisten
+</li>
+<li>Schaltkreis zum Vermessen von Bauteilen wie Transistor,
+Diode, Widerstand, Kondensator, Spule
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> USB-Seriell-Wandler</h3>
+<div class="outline-text-3" id="text-5-5">
+<ul class="org-ul">
+<li>galvanische Trennung
+</li>
+<li>Chip CP2102N
+</li>
+<li>Hardware-Handshake
+</li>
+<li>Pmod, lose
+</li>
+<li>USB-Kabel (Mikro-USB oder USB-C)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5-6" class="outline-3">
+<h3 id="sec-5-6"><span class="section-number-3">5.6</span> weitere Teile im Paket</h3>
+<div class="outline-text-3" id="text-5-6">
+<ul class="org-ul">
+<li>Fototransistor
+</li>
+<li>Potentiometer
+</li>
+<li>Pmod-Kabel
+</li>
+<li>lose Kabel Buchse/Buchse, verschiedene Längen
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Software</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Firmware auf dem Chip/Board</h3>
+<div class="outline-text-3" id="text-6-1">
+</div><div id="outline-container-sec-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> Mecrisp Quintus</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<ul class="org-ul">
+<li>Assembler
+</li>
+<li>Disassembler
+</li>
+<li>Fixkomma-Routinen
+</li>
+<li>Bedingte Compilierung
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> Forth-Bibliothek</h4>
+<div class="outline-text-4" id="text-6-1-2">
+<ul class="org-ul">
+<li>USB, USB-OTG
+</li>
+<li>SPI, I2C, UART, FIFO
+</li>
+<li>CAN
+</li>
+<li>Interrupt
+</li>
+<li>Timer
+</li>
+<li>SD-Karte, SPI-Flash
+</li>
+<li>ADC, DAC
+</li>
+<li>RTC
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span> Interaktives "Schweizer Taschenmesser"</h4>
+<div class="outline-text-4" id="text-6-1-3">
+<ul class="org-ul">
+<li>Messfunktionen
+</li>
+<li>Signalgenerator
+</li>
+<li>Protokollanalysator für UART, SPI, I2C, CAN    
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-1-4" class="outline-4">
+<h4 id="sec-6-1-4"><span class="section-number-4">6.1.4</span> VIS-System</h4>
+<div class="outline-text-4" id="text-6-1-4">
+<p>
+Vocs, Items, Sticky words von Manfred
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-1-5" class="outline-4">
+<h4 id="sec-6-1-5"><span class="section-number-4">6.1.5</span> History-Buffer</h4>
+<div class="outline-text-4" id="text-6-1-5">
+<p>
+Speichert die letzten 20 Eingaben. Quintus hat TIB von max. 200 Zeichen.
+Tricky: Quelltextdownload soll nicht im History-Buffer landen.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-1-6" class="outline-4">
+<h4 id="sec-6-1-6"><span class="section-number-4">6.1.6</span> Auto-Vervollständigung</h4>
+<div class="outline-text-4" id="text-6-1-6">
+<ul class="org-ul">
+<li>Dictionary-Einträge
+</li>
+<li>selbst definierte Floskeln
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-1-7" class="outline-4">
+<h4 id="sec-6-1-7"><span class="section-number-4">6.1.7</span> Eingebautes Hilfesystem im SPI-Flash</h4>
+<div class="outline-text-4" id="text-6-1-7">
+<ul class="org-ul">
+<li>Sprache: Englisch, eventuell später auch eine Version Deutsch
+</li>
+<li>Worte und ihre Funktion / Bedeutung
+(mit Beispiel-Quelltext zum Ausprobieren)
+</li>
+<li>Registerbeschreibung und momentane Werte anzeigen / setzen
+</li>
+<li>Verbose-Flag zur Umschaltung der Detailierung der Ausgabe
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-1-8" class="outline-4">
+<h4 id="sec-6-1-8"><span class="section-number-4">6.1.8</span> Forth-Beispieldateien</h4>
+<div class="outline-text-4" id="text-6-1-8">
+<ul class="org-ul">
+<li>Blinkprogramm
+</li>
+<li>Spiele
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-1-9" class="outline-4">
+<h4 id="sec-6-1-9"><span class="section-number-4">6.1.9</span> Interaktives Tutorial (macht Carsten)</h4>
+<div class="outline-text-4" id="text-6-1-9">
+<ul class="org-ul">
+<li>User kann auf dem Chip Forth lernen
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> auf dem PC</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>Entwicklungssystem
+<ul class="org-ul">
+<li>Program zum Flashen von Quintus (Python)
+</li>
+<li>Selbstgeschriebene IDE (Python) nach Vorbild "5th"
+</li>
+<li>Emacs incl. Syntax-Highlighting und Terminal
+</li>
+<li>e4thcom (Manfreds Terminal)
+</li>
+<li>picocom (Linux)
+</li>
+<li>minicom (Linux)
+</li>
+<li>Teraterm (Windows)
+</li>
+<li>Mac ???
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Dokumentation</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Heft: Schnelleinstieg (erste Schritte) für den Ungeduldigen</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>Platine zusammenbauen
+</li>
+<li>Einrichten einer Entwicklungsumgebung
+</li>
+<li>Blinkprogramm starten und verändern
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Buchreihe: Mecrisp Quintus</h3>
+<div class="outline-text-3" id="text-7-2">
+</div><div id="outline-container-sec-7-2-1" class="outline-4">
+<h4 id="sec-7-2-1"><span class="section-number-4">7.2.1</span> Buch1: Tutorial</h4>
+</div>
+<div id="outline-container-sec-7-2-2" class="outline-4">
+<h4 id="sec-7-2-2"><span class="section-number-4">7.2.2</span> Buch2: Benutzerhandbuch</h4>
+</div>
+<div id="outline-container-sec-7-2-3" class="outline-4">
+<h4 id="sec-7-2-3"><span class="section-number-4">7.2.3</span> Buch3: Referenzhandbuch</h4>
+</div>
+</div>
+
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> Buch: Der Mikrocontroller GD32VF103</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>Einführung Mikrocontroller
+</li>
+<li>RISC-V Befehlssatz-Architektur
+</li>
+<li>Pinbelegung Chip
+</li>
+<li>CPU
+</li>
+<li>Speicherorganisation
+</li>
+<li>Reset
+</li>
+<li>Interrupts / Events
+</li>
+<li>Oszillator
+</li>
+<li>Spezial-Funktionsregister
+</li>
+<li>Ports
+</li>
+<li>Timer
+</li>
+<li>Serielle Schnittstellen
+<ul class="org-ul">
+<li>UART
+</li>
+<li>SPI
+</li>
+<li>I2C
+</li>
+</ul>
+</li>
+<li>ADC
+</li>
+<li>Anhang
+<ul class="org-ul">
+<li>ASCII-Tabelle
+</li>
+<li>Befehlssatz
+</li>
+<li>Dezimal/Binär/Hex-Tabelle
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> Buch: Kochbuch / Rezepte</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>Schrittmotor-Steuerung
+</li>
+<li>Porterweiterung I2C
+</li>
+<li>CAN-Bus-Interface
+</li>
+<li>1-Wire-Temperaturlogger
+</li>
+<li>Larson-Scanner
+</li>
+<li>Multitasking
+</li>
+<li>Fixkomma-Arithmetik
+</li>
+<li>Benutzerschnittstellen
+</li>
+<li>2x16 LCD
+</li>
+<li>OLED 128x64
+</li>
+<li>Matrix-Tastatur
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-7-5" class="outline-3">
+<h3 id="sec-7-5"><span class="section-number-3">7.5</span> Hardware Benutzerhandbuch</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>Liste der Anschlüsse mit Beschreibung 
+</li>
+<li>Schaltplan
+</li>
+<li>Funktionsweise der Schaltung
+</li>
+<li>Kurzbeschreibung Bausteine
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-7-6" class="outline-3">
+<h3 id="sec-7-6"><span class="section-number-3">7.6</span> Datenblätter / Benutzerhandbücher verwendeter Bausteine</h3>
+<div class="outline-text-3" id="text-7-6">
+<ul class="org-ul">
+<li>GD32VF103
+</li>
+<li>SPI-Flash
+</li>
+<li>CP2102N
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Wolfgang</p>
+<p class="date">Created: 2020-05-03 So 22:27</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
